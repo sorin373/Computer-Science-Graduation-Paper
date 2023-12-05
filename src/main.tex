@@ -7,7 +7,6 @@
 \usepackage{caption}
 \usepackage{float}
 \usepackage[newfloat]{minted}
-\captionsetup[listing]{position=top}
 
 % Add a line after each section
 \titleformat{\section}
@@ -31,8 +30,6 @@
 
 \renewcommand*\contentsname{}
 
-
-
 \begin{document}
 
 \thispagestyle{empty}   % Removes page number from the first page
@@ -40,16 +37,16 @@
     \vspace*{\fill}     % Vertically center content
 
     \huge Colegiul National Bilingv
-    
+
     \huge "George Cosbuc"
-    
+
     \vspace{4cm}
-    
+
     \textbf{\Huge The Impact of C, UNIX, and Pioneers Dennis Ritchie \& Ken Thompson}
-    
+
     \vspace{10cm}
 
-     \begin{minipage}[t]{0.5\textwidth}
+    \begin{minipage}[t]{0.5\textwidth}
         \Large \textbf{Elev:}
         \large Sorin-Andrei Tudose \\
         \Large \textbf{Clasa:}
@@ -60,11 +57,11 @@
         \Large \textbf{Profesor coordonator:} \\
         \large Kerestély Melinda Laura
     \end{minipage}
-    
+
     \vspace*{\fill}     % Vertically center content
 \end{center}
 
-    
+
 \newpage
 \begin{center}
     \vspace*{\fill}     % Vertically center content
@@ -100,13 +97,13 @@ These days most people own at least one modern computer for personal usage. As a
     \item (1949) \textbf{EDSAC} and \textbf{EDVAC} - Computers get memory as tubes with mercury
     \item (1949) \textbf{BINAC} - Programming languages were introduced (\textbf{William Schmitt} – Short Order Code)
     \item (1952) \textbf{IBM 701} - The first computer to use the assembler-style language (\textit{Figure 2}) and a repository to store frequently used blocks of data.
-    \begin{figure}[H]
-        \centering
-        \begin{minted}[
-            linenos,        % Enable line numbers
-            frame=lines,    % Set frame style
-            framesep=2mm,   % Padding around frame
-            baselinestretch=1.2, % Adjust line spacing
+          \begin{figure}[H]
+              \centering
+              \begin{minted}[
+            linenos,                % Enable line numbers
+            frame=lines,            % Set frame style
+            framesep=2mm,           % Padding around frame
+            baselinestretch=1.2,    % Adjust line spacing
             fontsize=\footnotesize, % Adjust font size
             ]{text}
         *ASM     XOPTS(LEASM)
@@ -128,8 +125,8 @@ These days most people own at least one modern computer for personal usage. As a
         CODEREG  EQU    R3
                  END
         \end{minted}
-        \caption{IBM Assembler Language (ASM)}
-    \end{figure}
+              \caption{IBM Assembler Language (ASM)}
+          \end{figure}
     \item (1969) The \textbf{UNIX Time-Sharing} Operating System
 \end{itemize}
 

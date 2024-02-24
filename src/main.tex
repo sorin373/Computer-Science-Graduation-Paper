@@ -7,6 +7,9 @@
 \usepackage{caption}
 \usepackage{float}
 \usepackage[newfloat]{minted}
+\usepackage{stackengine}[2013-10-15]
+
+\newcommand\textss[1]{\stackengine{.9ex}{}{\scriptsize#1}{O}{l}{F}{F}{L}}
 
 % Add a line after each section
 \titleformat{\section}
@@ -83,7 +86,7 @@ I managed to understand that if one had the necessary knowledge, the possibiliti
 I knew that hardware and software was the area I wanted to excel in. I find it truly magical how people can manipulate every pixel of a computer screen and display any desired content.\newline\newline
 As a result, creating code and building applications, that help in solving different problems and enable us to be more effective is what I am keen on pursuing in my near future.
 It is undoubtedly a complex field where mathematical and physics skills are required, but the excitement and passion for this field helps me overcome all challenges. \newline\newline
-aving said that, I decided to write my Grade 12 Graduation Paper about \textbf{Dennis Ritchie} and \textbf{Ken Thompson} who revolutionized, in \textbf{1969} at \textbf{Bell Telephone Laboratories},
+Having said that, I decided to write my Grade 12 Graduation Paper about \textbf{Dennis Ritchie} and \textbf{Ken Thompson} who revolutionized, in \textbf{1969} at \textbf{Bell Telephone Laboratories},
 the way people used computers. Not only did they create the \underline{\textbf{UNIX}} operating system which is the root of many modern operating systems, but they also developed the \underline{\textbf{C}}
 programming language. I, for one, am amazed of the things they created considering the fact that resources were not as broadly available as they are nowadays.
 There were almost no applications designed for creating software and no internet that can assist with the process. In addition, they also had to write most of the code is Machine Language,
@@ -102,11 +105,7 @@ Not only did it use several cables and switches, which were used to start, shut 
 create different temporary circuits, for transmitting instructions to the machine. As a result, for each task the computer needed manual calibration which meant rewiring the plugboards and adjusting the switches.
 This “programming” method was not efficient in terms of flexibility and speed.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=10cm, height=5cm]{images/ENIAC.png}
-    \caption{ENIAC}
-\end{figure}
+
 
 \begin{center}
     \footnotesize“Preparing ENIAC for a series of runs was an incredibly involved process. First, detailed instructions had to be written defining the problem and a procedure for solving it. These instructions were programmed by adjusting switches manually and inserting thousands of cables into as many as forty large plug boards. A team of five operators might work several days on the external wiring and many more days searching for errors and correcting them.”\textbf{ — Breakthrough to the Computer Age, Harry Wulforst, Charles Scribner’s \& Sons Pub., 1982}
@@ -116,63 +115,27 @@ This “programming” method was not efficient in terms of flexibility and spee
 \begin{itemize}
     \item (1949) \textbf{EDSAC} and \textbf{EDVAC} - Computers get memory as tubes with mercury
     \item (1949) \textbf{BINAC} - Programming languages were introduced (\textbf{William Schmitt} – Short Order Code)
-    \item (1952) \textbf{IBM 701} - The first computer to use the assembler-style language (low-level programming language, used to directly communicate with the computer hardware) (\textit{Figure 2}) and a repository to store frequently used blocks of data.
-          \begin{figure}[H]
-              \centering
-              \begin{minted}[
-            linenos,        % Enable line numbers
-            frame=lines,    % Set frame style
-            framesep=2mm,   % Padding around frame
-            baselinestretch=1.2, % Adjust line spacing
-            fontsize=\footnotesize, % Adjust font size
-            ]{text}
-        *ASM     XOPTS(LEASM)
-        DFHEISTG DSECT
-        OUTAREA  DS    CL200                    DATA OUTPUT AREA
-        *
-        TESTLE   DFHEIENT CODEREG=R3
-                 MVC OUTAREA(40),MSG1
-                 MVC OUTAREA(4),EIBTRMID
-                 EXEC CICS SEND TEXT FROM(OUTAREA) LENGTH(43) FREEKB ERASE
-                 EXEC CICS RECEIVE
-                 MVC OUTAREA(13),MSG2
-                 EXEC CICS SEND TEXT FROM(OUTAREA) LENGTH(13) FREEKB ERASE
-                 EXEC CICS RETURN
-        *
-        MSG1     DC     C'xxxx: ASM program invoked. ENTER TO END.'
-        MSG2     DC     C'PROGRAM ENDED'
-                 DFHREGS
-        CODEREG  EQU    R3
-                 END
-        \end{minted}
-              \caption{IBM Assembler Language (\textbf{ASM})}
-          \end{figure}
-    \item (1969) The \textbf{UNIX Time-Sharing} Operating System\newline\newline
-          This year laid the foundation for modern computing. The UNIX Operating System, brought into perspective new technologies such as: \textbf{a hierarchical file system} (\textit{Figure 3}),
-          \textbf{multiple levels of file access permission}, \textbf{input/output redirection}, and \textbf{pipes} (\textit{a temporary connection between two or more commands, programs or processes}).
-
-          \begin{figure}[H]
-              \centering
-              \includegraphics[width=14cm, height=7cm]{images/linux-filesystem.png}
-              \caption{Hierarchical File System}
-          \end{figure}
-
+    \item (1952) \textbf{IBM 701} - The first computer to use the assembler-style language (low-level programming language, used to directly communicate with the computer hardware) (\textit{Figure 2}) and a repository to store frequently used blocks of data.\newline\newline
 \end{itemize}
 
-\newpage
-\section{Dennis Ritchie \& Ken Thompson: C \& UNIX Pioneers}
-During the late 1960s and early 1970s Ken Thompson and Dennis Ritchie worked as colleagues at the Bell Telephone Laboratories. Brian Kerninghan, who was part of the tehnical
+\section{Chapter 1: Dennis Ritchie \& Ken Thompson: C \& UNIX Pioneers}
+During the late 1960s and early 1970s Ken Thompson and Dennis Ritchie worked as colleagues at the Bell Telephone Laboratories. Brian Kerninghan, who was part of the technical
 staff at Bell Labs, describes Dennis Ritchie as \textit{"a really nice
-    guy"}, who was really smart. Moreover, Kerninghan also aknowledges that Ritchie and Thompson had almost the same thinking process when creating computer alghorithms.
+    guy"}, who was really smart. Moreover, Kerninghan also acknowledges that Ritchie and Thompson had almost the same thinking process when creating computer algorithms.
 They wanted to create an operating system that supported multitasking, allowing users to run programs simultaneously. \newline\newline
 Working together, they developed the \textbf{UNIX} Operating System using the high-level \textbf{C} programming language, designed by Ritchie.
 The main issue this operating system solved was the compatibility between machines.
 Computer software was specific to the hardware, therefore users would come find themselves using a machine with completely new command and operating procedures.
 UNIX, being written using the \textbf{C} programming language, made it portable and adaptable. Moreover, UNIX also introduced pipes, which I briefly described in the introduction section.
-This allowed different processes to communicate with each other and thus creating the possibility to run more complex tasks, more powerful workflows and automatisation. \newline\newline
-One true passion that Ken Thompson had, was computer games. Taking in consideration the limtation of computer hardware and software at that time, game development was quite the challenge for software engineers.
-Therefore, it took a lot of creativity and technical skills to successfully create a game. Not only did this hobby help him develop his alghoritmic thinking, but it also gave Thompson a deeper understanding of the early
-computer systems.\newline\newline
+This allowed different processes to communicate with each other and thus creating the possibility to run more complex tasks, more powerful workflows and automation. \newline\newline
+One true passion that Ken Thompson had, was computer games. Taking in consideration the limitation of computer hardware and software at that time, game development was quite the challenge for software engineers.
+Therefore, it took a lot of creativity and technical skills to successfully create a game. Not only did this hobby help him develop his algorithmic thinking, but it also gave Thompson a deeper understanding of the early
+computer systems.\newline
+
+I had a similar experience in high school. In the 11\textss{th} grade I had the chance to participate at a Game Jam, together with four other classmates. Having only two days to complete our game required us to work as efficiently as possible, by dividing the workload. There was a lot of research to conduct, since all of us had nearly no experience in game development. As a result, at the end of the contest I found myself grateful for taking up this challenge as it helped me develop a completely new skill. After all our efforts, our game won the event and therefore we won the prize, a trip to Berlin. Little did we know, but this would not be a casual trip. We took part in two extraordinary events: firstly, we wore taken to a game development center, where a couple of pro programmers introduced us to different software used in the industry. Moreover, they also took a look at our game, giving us a remarkable feedback on how to improve our work. After returning home, I realised how eye-opening this hole experience was. I found my deep passion in both software engineering and mathematics and started to slowly work on these skills, trying to learn something new everyday.\newline
+
+These subjects and everything related, for me, were now more then mandatory school subjects. Mathematics, physics and their relationship with computer science being the backbone of the 21\textss{st} century, convinced 
+
 \newpage
 \section{Chapter 2: UNIX, the operating system revolution}
 
